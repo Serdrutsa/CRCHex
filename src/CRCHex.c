@@ -43,7 +43,7 @@ uint16_t CalcCRC16(uint8_t *buf, uint32_t len, uint32_t crc_addr)
     uint16_t    c, crc=0;
     uint32_t	addr=0;
 	
-  while (addr<len)
+	while (addr<len)
 	{
 		if (addr!=crc_addr && addr!=(crc_addr+1) && addr!=(crc_addr+2) && addr!=(crc_addr+3))
 		{
@@ -87,7 +87,7 @@ uint32_t CalcChecksum32(uint8_t *buf, uint32_t len, uint32_t crc_addr)
 uint16_t CalcChecksum16(uint8_t *buf, uint32_t len, uint32_t crc_addr)
 {
   uint16_t	check_sum=0;
-	uint32_t	addr=0;
+  uint32_t	addr=0;
 	
   while (addr<len)
 	{
@@ -101,14 +101,14 @@ uint16_t CalcChecksum16(uint8_t *buf, uint32_t len, uint32_t crc_addr)
 }
 //------------------------------------------------------------------------
 // application entry point
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
-	int		nLength;
-	int		nStartAddr=-1, nEndAddr=-1, nCRCType=0, nCRCAddr=-1;
-	int		nInfo=0;
+	int	nLength;
+	int	nStartAddr=-1, nEndAddr=-1, nCRCType=0, nCRCAddr=-1;
+	int	nInfo=0;
 	char	sInFname[256];
 	
-	printf("Add CRC to Hex tool v.1.3.0.0 (c) 2014 ADD-TECHNOLOGY / by Serghei Druta\n");
+	printf("Add CRC to Hex tool v.1.4.0.0\n");
 	if (argc<2) {
 		printf("  Usage: CRCHex.exe -i=<input.hex> [options]\n");
 		printf("    Options:\n");
