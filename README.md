@@ -6,6 +6,6 @@ Usage: CRCHex.exe -i=input.hex -o=output.hex [options]<br>
 	-s=<start_address> - address to start CRC calculation (default: start of HEX)<br>
 	-e=<end_address>   - address to end CRC calculation (default: end of HEX)<br>
 	-a=<CRC_address>   - address to put CRC at (default: end of HEX)<br>
-	-p=1               - print info only (no file change)<br>
+	-p=1               - print info only (no output file generation)<br>
 
 Example: CRCHex.exe -i=fw.hex -o=out.hex -c=1 -s=0x5C00 -e=0x45BFF -a=0xFF7C<br>
