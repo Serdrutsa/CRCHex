@@ -13,6 +13,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: make
+    - name: Build with make
       working-directory: ./src
       run: make
+
+    - name: Create release directory
+      run: mkdir -p ./release
+
+    - name: Copy build output to release
+      run: cp ./src/CRCHex ./release/
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add ./release
+        git commit -m "Deploy build output to release directory"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
