@@ -21,8 +21,8 @@ jobs:
     - name: Create release directory
       run: mkdir -p ./release
 
-    - name: Copy build output to release
-      run: cp ./src/CRCHex ./release/
+    - name: Move build output to release
+      run: mv ./src/CRCHex ./release/
 
     - name: Commit and push changes
       run: |
