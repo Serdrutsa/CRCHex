@@ -24,7 +24,13 @@ jobs:
     - name: Move build output to release
       run: mv ./src/CRCHex ./release/
 
+    - name: Check if there are changes
+      id: verify_diff
+      run: |
+        git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT    
+
     - name: Commit and push changes
+      if: steps.verify_diff.outputs.changed == 'true'
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
