@@ -118,14 +118,14 @@ int main(int argc, char *argv[])
 	printf("Add CRC to Hex tool v.1.4\n");
 	if (argc < 2)
 	{
-		printf("  Usage: %s -i=<input.hex> -o=<output_hex> [options]\n", argv[0]);
-		printf("    Options:\n");
+		printf("Usage: %s -i=<input.hex> -o=<output_hex> [options]\n", argv[0]);
+		printf("  Options:\n");
 		printf("    -c=<CRC_type>      - 0=CRC16+Len, 1=Checksum32, 2=Checksum16+Len (default: 0)\n");
 		printf("    -s=<start_address> - address to start CRC calculation (default: start of HEX)\n");
 		printf("    -e=<end_address>   - address to end CRC calculation (default: end of HEX)\n");
 		printf("    -a=<CRC_address>   - address to put CRC (default: end of HEX)\n");
 		printf("    -p=1               - print info only (no file change)\n");
-		printf("  Example: %s -i=fw.hex -o=out.hex -c=1 -s=0x5C00 -e=0x45BFF -a=0xFF7C\n", argv[0]);
+		printf("Example: %s -i=fw.hex -o=out.hex -c=1 -s=0x5C00 -e=0x45BFF -a=0xFF7C\n", argv[0]);
 		printf("\n");
 		return 1;
 	}
