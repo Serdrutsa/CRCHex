@@ -1,13 +1,13 @@
 # Compiler and flags
-CC = gcc
-CFLAGS = -Wall -g -I/usr/include/
+CXX = g++
+CXXFLAGS = -std=c++20 -Wall -g -I/usr/include/
 TARGET = CRCHex
 
 # List of source files
-SRCS = CRCHex.c
+SRCS = CRCHex.cpp
 
 # List of object files (derived from SRCS)
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 # Phony targets (not actual files)
 .PHONY: all clean
@@ -17,11 +17,11 @@ all: $(TARGET)
 
 # Rule to build the final executable from object files
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 # Rule to build object files from source files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean up build files
 clean:
